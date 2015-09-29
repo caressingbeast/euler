@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>#14: Longest Collatz sequence</title>
+  </head>
+  <body>
+    <h1>#14: Longest Collatz sequence</h1>
+    <a href="../index.html">Back to main page</a>
+
+    <p>
+      The following iterative sequence is defined for the set of positive integers:
+    </p>
+    <p>
+      n → n/2 (n is even)<br />
+      n → 3n + 1 (n is odd)
+    </p>
+    <p>
+      Using the rule above and starting with 13, we generate the following sequence:
+    </p>
+    <p>
+      13 → 40 → 20 → 10 → 5 → 16 → 8 → 4 → 2 → 1
+    </p>
+    <p>
+      It can be seen that this sequence (starting at 13 and finishing at 1) contains
+      10 terms. Although it has not been proved yet (Collatz Problem), it is
+      thought that all starting numbers finish at 1.
+    </p>
+    <p>
+      Which starting number, under one million, produces the longest chain?
+    </p>
+
+    <h3>Answer: <span id="answer"></span></h3>
+    <small>(correct: 837799)</small>
+    <p>View source to see the solution.</p>
+
+    <script>
+      (function () {
+        'use strict';
+
+        var $answer = document.getElementById('answer');
+        var longest = {
+          length: 0,
+          number: 0
+        };
+
+        function findSequence (num) {
+          var result = num;
+          var sequence = [];
+
+          while (result > 1) {
+            if (result % 2 === 0) {
+              result = even(result)
+              sequence.push(result);
+            } else {
+              result = odd(result);
+              sequence.push(result);
+            }
+          }
+
+          return sequence;
+        }
+
+        function even (num) {
+          return num / 2;
+        }
+
+        function odd (num) {
+          return (3 * num) + 1;
+        }
+
+        for (var i = 1; i < 1000000; i++) {
+          var a = findSequence(i);
+
+          if (a.length > longest.length) {
+            longest.length = a.length;
+            longest.number = i;
+          }
+        }
+
+        $answer.innerText = longest.number;
+      })();
+    </script>
+  </body>
+</html>

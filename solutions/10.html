@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>#10: Summation of primes</title>
+    <link rel="stylesheet" href="../style.css">
   </head>
   <body>
     <h1>#10: Summation of primes</h1>
@@ -16,6 +17,7 @@
     </p>
 
     <h3>Answer: <span id="answer"></span></h3>
+    <small>(correct: 142913828922)</small>
     <p>View source to see the solution.</p>
 
     <script>
@@ -23,9 +25,9 @@
         'use strict';
 
         var $answer = document.getElementById('answer');
-        var sum = 5;
+        var sum = 5; // includes 2 and 3
 
-        function checkPrime (num) {
+        function numberIsPrime (num) {
           var sqrt = Math.ceil(Math.sqrt(num));
 
           for (var ind = 2; ind <= sqrt; ind++) {
@@ -37,8 +39,8 @@
           return true;
         }
 
-        for (var i = 4; i < 2000000; i++) {
-          if (checkPrime(i)) {
+        for (var i = 4; i < 2000000; i++) { // start at 4
+          if (numberIsPrime(i)) {
             sum += i;
           }
         }
