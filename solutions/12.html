@@ -47,22 +47,23 @@
         var $answer = document.getElementById('answer');
         var sum = 0;
 
-        function getDivisors () {
-          var divisors = [];
+        function getDivisorCount () {
+          var counter = 0;
+          var limit = Math.ceil(Math.sqrt(sum));
 
-          for (var ind = 1; ind <= sum; ind++) {
+          for (var ind = 1; ind <= limit; ind++) {
             if (sum % ind === 0) {
-              divisors.push(ind);
+              counter += 2;
             }
           }
 
-          return divisors.length;
+          return counter;
         }
 
-        for (var i = 0; i < 6000; i++) {
-          sum += i;
+        for (var i = 12000; i < 15000; i++) {
+          sum = (i * (i + 1)) / 2;
 
-          var divisors = getDivisors();
+          var divisors = getDivisorCount();
 
           if (divisors > 500) {
             break;

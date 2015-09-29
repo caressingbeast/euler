@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8">
     <title>#10: Summation of primes</title>
-    <link rel="stylesheet" href="../style.css">
   </head>
   <body>
     <h1>#10: Summation of primes</h1>
@@ -25,27 +24,39 @@
         'use strict';
 
         var $answer = document.getElementById('answer');
-        var sum = 5; // includes 2 and 3
 
-        function numberIsPrime (num) {
-          var sqrt = Math.ceil(Math.sqrt(num));
+        function getPrimes (n) {
+          var a = [];
+          var limit = Math.ceil(Math.sqrt(n));
+          var sum = 0;
 
-          for (var ind = 2; ind <= sqrt; ind++) {
-            if (num % ind === 0) {
-              return false;
+          // create array of integers
+          for (var i = 0; i < n; i++) {
+            a.push(true);
+          }
+
+          // false out the non-primes
+          for (var i = 2; i <= limit; i++) {
+            if (a[i]) {
+              for (var ind = i * i; ind < n; ind += i) {
+                a[ind] = false;
+              }
             }
           }
 
-          return true;
-        }
+          console.log(a);
 
-        for (var i = 4; i < 2000000; i++) { // start at 4
-          if (numberIsPrime(i)) {
-            sum += i;
+          // remaining are primes
+          for (var i = 2; i < n; i++) {
+            if (a[i]) {
+              sum += i;
+            }
           }
+
+          return sum;
         }
 
-        $answer.innerText = sum;
+        $answer.innerText = getPrimes(2000000);
       })();
     </script>
   </body>
