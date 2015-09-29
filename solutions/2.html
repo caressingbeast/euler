@@ -20,13 +20,33 @@
     </p>
     <h3>Answer: <span id="answer"></span></h3>
     <p>View source to see the solution.</p>
-    
+
     <script>
       (function () {
         'use strict';
 
         var $answer = document.getElementById('answer');
+        var i = 0;
+        var sum = 0;
+        var sequence = [];
 
+        while (i < 4000000) {
+          var len = sequence.length;
+
+          if (i % 2 === 0) {
+            sum += i;
+          }
+
+          if (len >= 2) {
+            i = i + sequence[len - 2];
+            sequence.push(i);
+          } else {
+            i++;
+            sequence.push(i);
+          }
+        }
+
+        $answer.innerText = sum;
       })();
     </script>
   </body>

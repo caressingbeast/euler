@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>#5: Smallest multiple</title>
+  </head>
+  <body>
+    <h1>#5: Smallest multiple</h1>
+    <a href="../index.html">Back to main page</a>
+    <p>
+      2520 is the smallest number that can be divided by each of the numbers from
+      1 to 10 without any remainder.
+    </p>
+    <p>
+      What is the smallest positive number that is evenly divisible by all of
+      the numbers from 1 to 20?
+    </p>
+    <h3>Answer: <span id="answer"></span></h3>
+    <p>View source to see the solution.</p>
+
+    <script>
+      (function () {
+        'use strict';
+
+        var $answer = document.getElementById('answer');
+        var number;
+
+        number_counter:
+        for (var i = 1; i <= 999999999; i++) {
+
+          divisor_counter:
+          for (var ind = 1; ind <= 20; ind++) {
+            if (i % ind !== 0) {
+              break divisor_counter;
+            }
+
+            if (ind === 20) {
+              number = i;
+              break number_counter;
+            }
+          }
+        }
+
+        $answer.innerText = number;
+      })();
+    </script>
+  </body>
+</html>
