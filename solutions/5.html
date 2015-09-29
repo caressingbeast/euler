@@ -15,20 +15,23 @@
       What is the smallest positive number that is evenly divisible by all of
       the numbers from 1 to 20?
     </p>
-    <h3>Answer: <span id="answer"></span></h3>
-    <small>(correct: 232792560)</small>
+    <h3>My answer: <span id="answer"></span></h3>
+    <small>
+      correct answer: 232792560<br />
+      processed in: <span id="process"></span>ms
+    </small>
     <p>View source to see the solution.</p>
 
     <script>
       (function () {
         'use strict';
 
-        var $answer = document.getElementById('answer');
-        var correct = document.getElementById('correct');
+        var startTime = new Date().getTime();
+        
         var number;
 
         number_counter:
-        for (var i = 1; i <= 999999999; i++) {
+        for (var i = 2520; i <= 999999999; i++) {
 
           divisor_counter:
           for (var ind = 1; ind <= 20; ind++) {
@@ -43,7 +46,10 @@
           }
         }
 
-        $answer.innerText = number;
+        var endTime = new Date().getTime();
+
+        document.getElementById('process').innerText = endTime - startTime;
+        document.getElementById('answer').innerText = number;
       })();
     </script>
   </body>

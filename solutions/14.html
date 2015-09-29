@@ -31,14 +31,18 @@
     </p>
 
     <h3>Answer: <span id="answer"></span></h3>
-    <small>(correct: 837799)</small>
+    <small>
+      correct answer: 837799<br />
+      processed in: <span id="process"></span>ms
+    </small>
     <p>View source to see the solution.</p>
 
     <script>
       (function () {
         'use strict';
 
-        var $answer = document.getElementById('answer');
+        var startTime = new Date().getTime();
+
         var LIMIT = 1000000;
         var length = 0;
         var start = 0;
@@ -56,6 +60,7 @@
 
         for (var i = 1; i < LIMIT; i++) {
           var counter = 0;
+
           sequence = i;
 
           while (sequence !== 1 && sequence >= i) {
@@ -76,7 +81,10 @@
           }
         }
 
-        $answer.innerText = start;
+        var endTime = new Date().getTime();
+
+        document.getElementById('process').innerText = endTime - startTime;
+        document.getElementById('answer').innerText = start;
       })();
     </script>
   </body>

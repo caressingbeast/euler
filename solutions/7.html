@@ -16,15 +16,19 @@
       What is the 10001st prime number?
     </p>
 
-    <h3>Answer: <span id="answer"></span></h3>
-    <small>(correct: 104743)</small>
+    <h3>My answer: <span id="answer"></span></h3>
+    <small>
+      correct answer: 104743<br />
+      processed in: <span id="process"></span>ms
+    </small>
     <p>View source to see the solution.</p>
 
     <script>
       (function () {
         'use strict';
 
-        var $answer = document.getElementById('answer');
+        var startTime = new Date().getTime();
+        
         var primes = [2, 3]; // sneak in the first few that require different logic
 
         outer_loop:
@@ -56,7 +60,10 @@
           }
         }
 
-        $answer.innerText = primes[primes.length - 1];
+        var endTime = new Date().getTime();
+
+        document.getElementById('process').innerText = endTime - startTime;
+        document.getElementById('answer').innerText = primes[primes.length - 1];
       })();
     </script>
   </body>

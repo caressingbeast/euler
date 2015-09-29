@@ -13,21 +13,34 @@
       to the right and down, there are exactly 6 routes to the bottom right corner.
     </p>
     <p>
-      <img src="https://projecteuler.net/project/images/p015.gif" alt="" />
-    </p>
-    <p>
       How many such routes are there through a 20×20 grid?
     </p>
 
     <h3>Answer: <span id="answer"></span></h3>
-    <small>(correct: 137846528820)</small>
+    <small>
+      correct answer: 137846528820<br />
+      processed in: <span id="process"></span>ms
+    </small>
     <p>View source to see the solution.</p>
 
     <script>
       (function () {
         'use strict';
 
-        var $answer = document.getElementById('answer');
+        var startTime = new Date().getTime();
+
+        var paths = 1;
+        var size = 20;
+
+        for (var i = 0; i < size; i++) {
+          paths *= (2 * size) - i;
+          paths /= i + 1;
+        }
+
+        var endTime = new Date().getTime();
+
+        document.getElementById('process').innerText = endTime - startTime;
+        document.getElementById('answer').innerText = paths;
       })();
     </script>
   </body>

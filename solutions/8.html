@@ -3,6 +3,11 @@
   <head>
     <meta charset="utf-8">
     <title>#8: Largest product in a series</title>
+    <style>
+      code {
+        color: #999;
+      }
+    </style>
   </head>
   <body>
     <h1>#8: Largest product in a series</h1>
@@ -41,15 +46,19 @@
       greatest product. What is the value of this product?
     </p>
 
-    <h3>Answer: <span id="answer"></span></h3>
-    <small>(correct: 23514624000)</small>
+    <h3>My answer: <span id="answer"></span></h3>
+    <small>
+      correct answer: 23514624000<br />
+      processed in: <span id="process"></span>ms
+    </small>
     <p>View source to see the solution.</p>
 
     <script>
       (function () {
         'use strict';
 
-        var $answer = document.getElementById('answer');
+        var startTime = new Date().getTime();
+
         var series = [
           '73167176531330624919225119674426574742355349194934',
           '96983520312774506326239578318016984801869478851843',
@@ -94,7 +103,10 @@
           }
         }
 
-        $answer.innerText = product;
+        var endTime = new Date().getTime();
+
+        document.getElementById('process').innerText = endTime - startTime;
+        document.getElementById('answer').innerText = product;
       })();
     </script>
   </body>

@@ -13,15 +13,19 @@
     <p>
       What is the largest prime factor of the number 600851475143?
     </p>
-    <h3>Answer: <span id="answer"></span></h3>
-    <small>(correct: 6857)</small>
+    <h3>My answer: <span id="answer"></span></h3>
+    <small>
+      correct answer: 6857<br />
+      processed in: <span id="process"></span>ms
+    </small>
     <p>View source to see the solution.</p>
 
     <script>
       (function () {
         'use strict';
 
-        var $answer = document.getElementById('answer');
+        var startTime = new Date().getTime();
+
         var factors = [];
         var product = 1;
 
@@ -42,7 +46,10 @@
 
         factor(600851475143);
 
-        $answer.innerText = factors[factors.length - 1];
+        var endTime = new Date().getTime();
+
+        document.getElementById('process').innerText = endTime - startTime;
+        document.getElementById('answer').innerText = factors[factors.length - 1];
       })();
     </script>
   </body>

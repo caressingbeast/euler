@@ -18,15 +18,19 @@
       By considering the terms in the Fibonacci sequence whose values do not
       exceed four million, find the sum of the even-valued terms.
     </p>
-    <h3>Answer: <span id="answer"></span></h3>
-    <small>(correct: 4613732)</small>
+    <h3>My answer: <span id="answer"></span></h3>
+    <small>
+      correct answer: 4613732<br />
+      processed in: <span id="process"></span>ms
+    </small>
     <p>View source to see the solution.</p>
 
     <script>
       (function () {
         'use strict';
 
-        var $answer = document.getElementById('answer');
+        var startTime = new Date().getTime();
+
         var i = 0;
         var sum = 0;
         var sequence = [];
@@ -47,7 +51,10 @@
           }
         }
 
-        $answer.innerText = sum;
+        var endTime = new Date().getTime();
+
+        document.getElementById('process').innerText = endTime - startTime;
+        document.getElementById('answer').innerText = sum;
       })();
     </script>
   </body>

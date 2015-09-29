@@ -14,15 +14,19 @@
     <p>
       Find the largest palindrome made from the product of two 3-digit numbers.
     </p>
-    <h3>Answer: <span id="answer"></span></h3>
-    <small>(correct: 906609)</small>
+    <h3>My answer: <span id="answer"></span></h3>
+    <small>
+      correct answer: 906609<br />
+      processed in: <span id="process"></span>ms
+    </small>
     <p>View source to see the solution.</p>
 
     <script>
       (function () {
         'use strict';
 
-        var $answer = document.getElementById('answer');
+        var startTime = new Date().getTime();
+
         var palindrome = 0;
 
         function reverse (s) {
@@ -42,7 +46,10 @@
           }
         }
 
-        $answer.innerText = palindrome;
+        var endTime = new Date().getTime();
+
+        document.getElementById('process').innerText = endTime - startTime;
+        document.getElementById('answer').innerText = palindrome;
       })();
     </script>
   </body>
