@@ -44,23 +44,6 @@
           number: 0
         };
 
-        function findSequence (num) {
-          var result = num;
-          var sequence = [];
-
-          while (result > 1) {
-            if (result % 2 === 0) {
-              result = even(result)
-              sequence.push(result);
-            } else {
-              result = odd(result);
-              sequence.push(result);
-            }
-          }
-
-          return sequence;
-        }
-
         function even (num) {
           return num / 2;
         }
@@ -69,11 +52,28 @@
           return (3 * num) + 1;
         }
 
-        for (var i = 1; i < 1000000; i++) {
-          var a = findSequence(i);
+        function findSequence (num) {
+          var result = num;
+          var sequence = [];
 
-          if (a.length > longest.length) {
-            longest.length = a.length;
+          while (result > 1) {
+            if (result % 2 === 0) {
+              result = even(result);              
+            } else {
+              result = odd(result);
+            }
+
+            sequence.push(result);
+          }
+
+          return sequence.length;
+        }
+
+        for (var i = 1; i < 1000000; i++) {
+          var len = findSequence(i);
+
+          if (len > longest.length) {
+            longest.length = len;
             longest.number = i;
           }
         }
