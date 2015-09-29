@@ -86,7 +86,7 @@
 
         for (var i = 0; i < groups.length; i++) {
           var a = groups[i].split('');
-          var result = a.reduce(function (a, b) { return a * b });
+          var result = a.reduce(function (f, s) { return f * s });
 
           if (result > product) {
             product = result;
