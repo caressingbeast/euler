@@ -46,9 +46,8 @@
 
         function getDivisorCount () {
           var counter = 0;
-          var limit = Math.ceil(Math.sqrt(sum));
 
-          for (var ind = 1; ind <= limit; ind++) {
+          for (var ind = 1, limit = Math.sqrt(sum); ind <= limit; ind++) {
             if (sum % ind === 0) {
               counter += 2;
             }

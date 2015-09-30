@@ -36,7 +36,7 @@
           return n * factorial(n - 1);
         }
 
-        document.getElementById('answer').innerText = result;
+        document.getElementById('answer').innerText = '';
         document.getElementById('elapsed').innerText = new Date().getTime() - startTime;
       })();
     </script>

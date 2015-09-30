@@ -22,15 +22,15 @@
         'use strict';
 
         var startTime = new Date().getTime();
-        var sum = 0;
+        var result = 0;
 
         for (var i = 0; i < 1000; i++) {
           if (i % 3 === 0 || i % 5 === 0) {
-            sum += i;
+            result += i;
           }
         }
 
-        document.getElementById('answer').innerText = sum;
+        document.getElementById('answer').innerText = result;
         document.getElementById('elapsed').innerText = new Date().getTime() - startTime;
       })();
     </script>

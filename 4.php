@@ -33,7 +33,7 @@
             var n = i * ind;
             var s = n.toString();
 
-            if (s === reverse(s) && n > result) {
+            if (s === reverse(s)) {
               if (n > result) {
                 result = n;
               }

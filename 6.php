@@ -35,13 +35,9 @@
         'use strict';
 
         var startTime = new Date().getTime();
-        var sum = 0;
-        var sumOfSquares = 0;
-
-        for (var i = 1; i <= 100; i++) {
-          sum += i;
-          sumOfSquares += (i * i);
-        }
+        var n = 100;
+        var sum = (n * (n + 1)) / 2; // n(n + 1) / 2
+        var sumOfSquares = ((n * (n + 1)) * ((2 * n) + 1)) / 6; // n(n + 1)(2n + 1) / 6
 
         var squareOfSum = (sum * sum) - sumOfSquares;
 

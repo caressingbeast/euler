@@ -21,29 +21,8 @@
         'use strict';
 
         var startTime = new Date().getTime();
-        var sum = 0;
-
-        function getDigits (n, exp) {
-          var counter = 1;
-          var limit = exp * (Math.log(n) / Math.log(10));
-          var digits = [n];
-
-          while (counter < exp) {
-            var remainder = 0;
-
-            counter++;
-
-            for (var i = 0; i < limit; i++) {
-              var number = n * (digits[i] || 0) + remainder;
-              digits[i] = number % 10;
-              remainder = Math.floor(number / 10);
-            }
-          }
-
-          return digits;
-        }
-
         var digits = getDigits(2, 1000);
+        var sum = 0;       
 
         for (var i = 0; i < digits.length; i++) {
           sum += digits[i];

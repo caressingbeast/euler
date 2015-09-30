@@ -22,7 +22,13 @@
       <li><a href="16.php">Power digit sum</a></li>
       <li><a href="17.php">Number letter counts</a></li>
       <li><a href="18.php">Maximum path sum I</a></li>
-      <li><a href="19.php">Counting Sundays</a></li>
-      <li><a href="20.php">Factorial digit sum</a></li>
+      <li><a href="19.php">Counting Sundays</a> (x)</li>
+      <li><a href="20.php">Factorial digit sum</a> (x)</li>
+      <li><a href="21.php">Amicable numbers</a> (x)</li>
+      <li>TODO</li>
+      <li>TODO</li>
+      <li>TODO</li>
+      <li><a href="25.php">1000-digit Fibonacci number</a> (x)</li>
+      <li><a href="26.php">Reciprocal cycles</a> (x)</li>
     </ol>
 <?php include('includes/footer.php'); ?>

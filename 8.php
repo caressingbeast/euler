@@ -26,7 +26,7 @@
         'use strict';
 
         var startTime = new Date().getTime();
-        var series = [
+        var number = [
           '73167176531330624919225119674426574742355349194934',
           '96983520312774506326239578318016984801869478851843',
           '85861560789112949495459501737958331952853208805511',
@@ -48,31 +48,37 @@
           '05886116467109405077541002256983155200055935729725',
           '71636269561882670428252483600823257530420752963450'
         ].join('');
-        var sArray = series.split('');
-        var groups = [];
-        var numbers = [];
-        var product = 0;
+        var nArray = number.split('');
+        var result = 0;
+        var digits = [];
+        var snippets = [];
 
-        for (var i = 0; i < sArray.length; i++) {
-          if (numbers.length === 13) {
-            groups.push(numbers.slice());
-            numbers.splice(0, 1);
+        // loop through number and create arrays of 13 digits
+        for (var i = 0; i < nArray.length; i++) {
+          if (digits.length === 13) {
+            snippets.push(digits.slice());
+            digits.splice(0, 1);
           }
 
-          numbers.push(sArray[i]);
+          digits.push(nArray[i]);
         }
 
-        for (var i = 0; i < groups.length; i++) {
-          var a = groups[i];
-          var result = a.reduce(function (f, s) { return f * s });
+        // loop through 13-digit arrays and find the product of the digits
+        for (var i = 0; i < snippets.length; i++) {
+          var a = snippets[i];
+          var product = 1;
 
-          if (result > product) {
-            product = result;
+          for (var j = 0; j < a.length; j++) {
+            product *= a[j];
+          }
+
+          if (product > result) {
+            result = product;
           }
         }
 
-        document.getElementsByTagName('code')[0].innerText = series;
-        document.getElementById('answer').innerText = product;
+        document.getElementsByTagName('code')[0].innerText = number;
+        document.getElementById('answer').innerText = result;
         document.getElementById('elapsed').innerText = new Date().getTime() - startTime;
       })();
     </script>
