@@ -23,25 +23,26 @@
         'use strict';
 
         var startTime = new Date().getTime();
-        var number;
+        var INTERVAL = 2520; // smallest number evently divisible by 1-10
+        var result;
 
         number_counter:
-        for (var i = 2520; i <= 999999999; i++) {
+        for (var i = INTERVAL; i <= 500000000; i += INTERVAL) {
 
           divisor_counter:
-          for (var ind = 1; ind <= 20; ind++) {
-            if (i % ind !== 0) {
+          for (var j = 11; j <= 20; j++) { // divisible by 11-20 = divisible by 1-10
+            if (i % j !== 0) {
               break divisor_counter;
             }
 
-            if (ind === 20) {
-              number = i;
+            if (j === 20) {
+              result = i;
               break number_counter;
             }
           }
         }
 
-        document.getElementById('answer').innerText = number;
+        document.getElementById('answer').innerText = result;
         document.getElementById('elapsed').innerText = new Date().getTime() - startTime;
       })();
     </script>

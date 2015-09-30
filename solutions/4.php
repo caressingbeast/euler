@@ -22,8 +22,7 @@
         'use strict';
 
         var startTime = new Date().getTime();
-
-        var palindrome = 0;
+        var result = 0;
 
         function reverse (s) {
           return s.split('').reverse().join('');
@@ -34,15 +33,15 @@
             var n = i * ind;
             var s = n.toString();
 
-            if (s === reverse(s)) {
-              if (n > palindrome) {
-                palindrome = n;
+            if (s === reverse(s) && n > result) {
+              if (n > result) {
+                result = n;
               }
             }
           }
         }
 
-        document.getElementById('answer').innerText = palindrome;
+        document.getElementById('answer').innerText = result;
         document.getElementById('elapsed').innerText = new Date().getTime() - startTime;
       })();
     </script>

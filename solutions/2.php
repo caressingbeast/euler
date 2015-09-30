@@ -31,19 +31,19 @@
         var sequence = [];
 
         while (i < 4000000) {
-          var len = sequence.length;
+          var l = sequence.length;
 
           if (i % 2 === 0) {
             sum += i;
           }
 
-          if (len >= 2) {
-            i = i + sequence[len - 2];
-            sequence.push(i);
+          if (l > 2) {
+            i = i + sequence[l - 2];
           } else {
             i++;
-            sequence.push(i);
           }
+
+          sequence.push(i);
         }
 
         document.getElementById('answer').innerText = sum;

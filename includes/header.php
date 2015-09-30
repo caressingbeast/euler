@@ -23,7 +23,7 @@
     </style>
     <script>
       function getPrimes (n) {
-        var limit = Math.ceil(Math.sqrt(n));
+        var limit = Math.sqrt(n);
         var a = [];
         var o = [];
 

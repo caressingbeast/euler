@@ -21,27 +21,30 @@
         'use strict';
 
         var startTime = new Date().getTime();
-        var factors = [];
-        var product = 1;
 
-        function factor (number) {
-          for (var i = 2; i < number; i++) {
-            if (number % i === 0) {
-              if (i % 2 !== 0) {
-                if (product < number) {
-                  factors.push(i);
-                  product *= i;
-                } else {
-                  break;
-                }
-              }
+        function getSmallestFactor (n) {
+          for (var i = 2, limit = Math.sqrt(n); i < limit; i++) {
+            if (n % i === 0) {
+              return i;
+            }
+          }
+
+          return n;
+        }
+
+        function factor (n) {
+          while (true) {
+            var f = getSmallestFactor(n);
+
+            if (f < n) {
+              n /= f;
+            } else {
+              return n;
             }
           }
         }
 
-        factor(600851475143);
-
-        document.getElementById('answer').innerText = factors[factors.length - 1];
+        document.getElementById('answer').innerText = factor(600851475143);
         document.getElementById('elapsed').innerText = new Date().getTime() - startTime;
       })();
     </script>
