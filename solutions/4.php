@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>#4: Largest palindrome product</title>
-  </head>
-  <body>
-    <h1>#4: Largest palindrome product</h1>
-    <a href="../index.html">Back to main page</a>
+<?php
+  $page_title = '#4: Largest palindrome product';
+  include('../includes/header.php');
+  include('../includes/solution_header.php');
+?>
+
     <p>
       A palindromic number reads the same both ways. The largest palindrome made
       from the product of two 2-digit numbers is 9009 = 91 × 99.
@@ -14,12 +11,11 @@
     <p>
       Find the largest palindrome made from the product of two 3-digit numbers.
     </p>
-    <h3>My answer: <span id="answer"></span></h3>
-    <small>
-      correct answer: 906609<br />
-      processed in: <span id="process"></span>ms
-    </small>
-    <p>View source to see the solution.</p>
+
+    <?php
+      $correct_answer = '906609';
+      include('../includes/solution_details.php');
+    ?>
 
     <script>
       (function () {
@@ -46,11 +42,8 @@
           }
         }
 
-        var endTime = new Date().getTime();
-
-        document.getElementById('process').innerText = endTime - startTime;
         document.getElementById('answer').innerText = palindrome;
+        document.getElementById('elapsed').innerText = new Date().getTime() - startTime;
       })();
     </script>
-  </body>
-</html>
+<?php include('../includes/footer.php'); ?>

@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>#5: Smallest multiple</title>
-  </head>
-  <body>
-    <h1>#5: Smallest multiple</h1>
-    <a href="../index.html">Back to main page</a>
+<?php
+  $page_title = '#5: Smallest multiple';
+  include('../includes/header.php');
+  include('../includes/solution_header.php');
+?>
+
     <p>
       2520 is the smallest number that can be divided by each of the numbers from
       1 to 10 without any remainder.
@@ -15,19 +12,17 @@
       What is the smallest positive number that is evenly divisible by all of
       the numbers from 1 to 20?
     </p>
-    <h3>My answer: <span id="answer"></span></h3>
-    <small>
-      correct answer: 232792560<br />
-      processed in: <span id="process"></span>ms
-    </small>
-    <p>View source to see the solution.</p>
+
+    <?php
+      $correct_answer = '232792560';
+      include('../includes/solution_details.php');
+    ?>
 
     <script>
       (function () {
         'use strict';
 
         var startTime = new Date().getTime();
-        
         var number;
 
         number_counter:
@@ -46,11 +41,9 @@
           }
         }
 
-        var endTime = new Date().getTime();
-
-        document.getElementById('process').innerText = endTime - startTime;
         document.getElementById('answer').innerText = number;
+        document.getElementById('elapsed').innerText = new Date().getTime() - startTime;
       })();
     </script>
   </body>
-</html>
+<?php include('../includes/footer.php'); ?>

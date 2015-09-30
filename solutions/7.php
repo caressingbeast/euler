@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>#7: 10001st prime</title>
-  </head>
-  <body>
-    <h1>#7: 10001st prime</h1>
-    <a href="../index.html">Back to main page</a>
+<?php
+  $page_title = '#7: 10001st prime';
+  include('../includes/header.php');
+  include('../includes/solution_header.php');
+?>
 
     <p>
       By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see
@@ -16,19 +12,16 @@
       What is the 10001st prime number?
     </p>
 
-    <h3>My answer: <span id="answer"></span></h3>
-    <small>
-      correct answer: 104743<br />
-      processed in: <span id="process"></span>ms
-    </small>
-    <p>View source to see the solution.</p>
+    <?php
+      $correct_answer = '104743';
+      include('../includes/solution_details.php');
+    ?>
 
     <script>
       (function () {
         'use strict';
 
         var startTime = new Date().getTime();
-        
         var primes = [2, 3]; // sneak in the first few that require different logic
 
         outer_loop:
@@ -60,11 +53,8 @@
           }
         }
 
-        var endTime = new Date().getTime();
-
-        document.getElementById('process').innerText = endTime - startTime;
         document.getElementById('answer').innerText = primes[primes.length - 1];
+        document.getElementById('elapsed').innerText = new Date().getTime() - startTime;
       })();
     </script>
-  </body>
-</html>
+<?php include('../includes/footer.php'); ?>

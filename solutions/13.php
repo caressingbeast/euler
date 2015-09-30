@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>#13: Large sum</title>
-  </head>
-  <body>
-    <h1>#13: Large sum</h1>
-    <a href="../index.html">Back to main page</a>
+<?php
+  $page_title = '#13: Large sum';
+  include('../includes/header.php');
+  include('../includes/solution_header.php');
+?>
 
     <p>
       Work out the first ten digits of the sum of the following one-hundred
@@ -117,15 +113,16 @@
       </code>
     </p>
 
-    <h3>Answer: <span id="answer"></span></h3>
-    <small>(correct: 5537376230)</small>
-    <p>View source to see the solution.</p>
+    <?php
+      $correct_answer = '5537376230';
+      include('../includes/solution_details.php');
+    ?>
 
     <script>
       (function () {
         'use strict';
 
-        var $answer = document.getElementById('answer');
+        var startTime = new Date().getTime();
         var sum = 0;
         var lines = [
           '37107287533902102798797998220837590246510135740250',
@@ -237,8 +234,8 @@
         var shortString = sum.toString().substring(0, 11);
         var number = shortString * 1000000000;
 
-        $answer.innerText = number;
+        document.getElementById('answer').innerText = number;
+        document.getElementById('elapsed').innerText = new Date().getTime() - startTime;
       })();
     </script>
-  </body>
-</html>
+<?php include('../includes/footer.php'); ?>

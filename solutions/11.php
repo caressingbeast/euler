@@ -1,21 +1,8 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>#11: Largest product in a grid</title>
-    <style>
-      code {
-        color: #999;
-      }
-
-      b {
-        color: red;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>#11: Largest product in a grid</h1>
-    <a href="../index.html">Back to main page</a>
+<?php
+  $page_title = '#11: Largest product in a grid';
+  include('../includes/header.php');
+  include('../includes/solution_header.php');
+?>
 
     <p>
       In the 20×20 grid below, four numbers along a diagonal line have been marked
@@ -53,15 +40,16 @@
       (up, down, left, right, or diagonally) in the 20×20 grid?
     </p>
 
-    <h3>Answer: <span id="answer"></span></h3>
-    <small>(correct: 70600674)</small>
-    <p>View source to see the solution.</p>
+    <?php
+      $correct_answer = '70600674';
+      include('../includes/solution_details.php');
+    ?>
 
     <script>
       (function () {
         'use strict';
 
-        var $answer = document.getElementById('answer');
+        var startTime = new Date().getTime();
         var grid = [
           [8, 2, 22, 97, 38, 15, 0, 40, 0, 75, 4, 5, 7, 78, 52, 12, 50, 77, 91, 8],
           [49, 49, 99, 40, 17, 81, 18, 57, 60, 87, 17, 40, 98, 43, 69, 48, 4, 56, 62, 0],
@@ -162,8 +150,8 @@
           }
         }
 
-        $answer.innerText = product;
+        document.getElementById('answer').innerText = product;
+        document.getElementById('elapsed').innerText = new Date().getTime() - startTime;
       })();
     </script>
-  </body>
-</html>
+<?php include('../includes/footer.php'); ?>

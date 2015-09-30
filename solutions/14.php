@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>#14: Longest Collatz sequence</title>
-  </head>
-  <body>
-    <h1>#14: Longest Collatz sequence</h1>
-    <a href="../index.html">Back to main page</a>
+<?php
+  $page_title = '#14: Longest Collatz sequence';
+  include('../includes/header.php');
+  include('../includes/solution_header.php');
+?>
 
     <p>
       The following iterative sequence is defined for the set of positive integers:
@@ -30,19 +26,16 @@
       Which starting number, under one million, produces the longest chain?
     </p>
 
-    <h3>Answer: <span id="answer"></span></h3>
-    <small>
-      correct answer: 837799<br />
-      processed in: <span id="process"></span>ms
-    </small>
-    <p>View source to see the solution.</p>
+    <?php
+      $correct_answer = '837799';
+      include('../includes/solution_details.php');
+    ?>
 
     <script>
       (function () {
         'use strict';
 
         var startTime = new Date().getTime();
-
         var LIMIT = 1000000;
         var length = 0;
         var start = 0;
@@ -81,11 +74,8 @@
           }
         }
 
-        var endTime = new Date().getTime();
-
-        document.getElementById('process').innerText = endTime - startTime;
         document.getElementById('answer').innerText = start;
+        document.getElementById('elapsed').innerText = new Date().getTime() - startTime;
       })();
     </script>
-  </body>
-</html>
+<?php include('../includes/footer.php'); ?>

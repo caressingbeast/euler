@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>#6: Sum square difference</title>
-  </head>
-  <body>
-    <h1>#6: Sum square difference</h1>
-    <a href="../index.html">Back to main page</a>
+<?php
+  $page_title = '#6: Sum square difference';
+  include('../includes/header.php');
+  include('../includes/solution_header.php');
+?>
+
     <p>
       The sum of the squares of the first ten natural numbers is,
     </p>
@@ -27,34 +24,29 @@
       Find the difference between the sum of the squares of the first one hundred
       natural numbers and the square of the sum.
     </p>
-    <h3>My answer: <span id="answer"></span></h3>
-    <small>
-      correct answer: 25164150<br />
-      processed in: <span id="process"></span>ms
-    </small>
-    <p>View source to see the solution.</p>
+
+    <?php
+      $correct_answer = '25164150';
+      include('../includes/solution_details.php');
+    ?>
 
     <script>
       (function () {
         'use strict';
 
         var startTime = new Date().getTime();
-
-        var squareOfSum = 0;
+        var sum = 0;
         var sumOfSquares = 0;
 
         for (var i = 1; i <= 100; i++) {
-          squareOfSum += i;
+          sum += i;
           sumOfSquares += (i * i);
         }
 
-        var difference = (squareOfSum * squareOfSum) - sumOfSquares;
+        var squareOfSum = (sum * sum) - sumOfSquares;
 
-        var endTime = new Date().getTime();
-
-        document.getElementById('process').innerText = endTime - startTime;
-        document.getElementById('answer').innerText = difference;
+        document.getElementById('answer').innerText = squareOfSum;
+        document.getElementById('elapsed').innerText = new Date().getTime() - startTime;
       })();
     </script>
-  </body>
-</html>
+<?php include('../includes/footer.php'); ?>

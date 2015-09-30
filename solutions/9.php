@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>#9: Special Pythagorean triplet</title>
-  </head>
-  <body>
-    <h1>#9: Special Pythagorean triplet</h1>
-    <a href="../index.html">Back to main page</a>
+<?php
+  $page_title = '#9: Special Pythagorean triplet';
+  include('../includes/header.php');
+  include('../includes/solution_header.php');
+?>
 
     <p>
       A Pythagorean triplet is a set of three natural numbers, a < b < c, for which,
@@ -22,19 +18,16 @@
       Find the product abc.
     </p>
 
-    <h3>My answer: <span id="answer"></span></h3>
-    <small>
-      correct answer: 31875000<br />
-      processed in: <span id="process"></span>ms
-    </small>
-    <p>View source to see the solution.</p>
+    <?php
+      $correct_answer = '31875000';
+      include('../includes/solution_details.php');
+    ?>
 
     <script>
       (function () {
         'use strict';
 
         var startTime = new Date().getTime();
-
         var SUM = 1000;
         var product;
 
@@ -51,11 +44,8 @@
           }
         }
 
-        var endTime = new Date().getTime();
-
-        document.getElementById('process').innerText = endTime - startTime;
         document.getElementById('answer').innerText = product;
+        document.getElementById('elapsed').innerText = new Date().getTime() - startTime;
       })();
     </script>
-  </body>
-</html>
+<?php include('../includes/footer.php'); ?>
