@@ -21,5 +21,6 @@
       <li><a href="solutions/15.php">Lattice paths</a></li>
       <li><a href="solutions/16.php">Power digit sum</a></li>
       <li><a href="solutions/17.php">Number letter counts</a></li>
+      <li><a href="solutions/18.php">Maximum path sum I</a></li>
     </ol>
 <?php include('includes/footer.php'); ?>

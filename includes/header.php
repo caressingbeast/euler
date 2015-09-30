@@ -16,6 +16,10 @@
         white-space: pre-wrap;
         word-wrap: break-word;
       }
+
+      .center {
+        text-align: center;
+      }
     </style>
     <script>
       function getPrimes (n) {

@@ -37,7 +37,8 @@
         };
 
         // 20 - 99
-        counts.c = ((10 * (6 + 6 + 5 + 5 + 5 + 7 + 6 + 6)) + (8 * counts.a));
+        counts.c = ((10 * (6 + 6 + 5 + 5 + 5 + 7 + 6 + 6)) + // prefixes
+                   (8 * counts.a)); // 1 - 9 within each prefix
 
         // sum 1 - 99
         counts.d = counts.a + counts.b + counts.c;
