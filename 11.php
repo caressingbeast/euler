@@ -1,7 +1,7 @@
 <?php
   $page_title = '#11: Largest product in a grid';
-  include('../includes/header.php');
-  include('../includes/solution_header.php');
+  include('includes/header.php');
+  include('includes/solution_header.php');
 ?>
 
     <p>
@@ -42,7 +42,7 @@
 
     <?php
       $correct_answer = '70600674';
-      include('../includes/solution_details.php');
+      include('includes/solution_details.php');
     ?>
 
     <script>
@@ -154,4 +154,4 @@
         document.getElementById('elapsed').innerText = new Date().getTime() - startTime;
       })();
     </script>
-<?php include('../includes/footer.php'); ?>
+<?php include('includes/footer.php'); ?>

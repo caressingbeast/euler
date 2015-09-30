@@ -1,7 +1,7 @@
 <?php
   $page_title = '#5: Smallest multiple';
-  include('../includes/header.php');
-  include('../includes/solution_header.php');
+  include('includes/header.php');
+  include('includes/solution_header.php');
 ?>
 
     <p>
@@ -15,7 +15,7 @@
 
     <?php
       $correct_answer = '232792560';
-      include('../includes/solution_details.php');
+      include('includes/solution_details.php');
     ?>
 
     <script>
@@ -47,4 +47,4 @@
       })();
     </script>
   </body>
-<?php include('../includes/footer.php'); ?>
+<?php include('includes/footer.php'); ?>

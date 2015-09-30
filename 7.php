@@ -1,7 +1,7 @@
 <?php
   $page_title = '#7: 10001st prime';
-  include('../includes/header.php');
-  include('../includes/solution_header.php');
+  include('includes/header.php');
+  include('includes/solution_header.php');
 ?>
 
     <p>
@@ -14,7 +14,7 @@
 
     <?php
       $correct_answer = '104743';
-      include('../includes/solution_details.php');
+      include('includes/solution_details.php');
     ?>
 
     <script>
@@ -57,4 +57,4 @@
         document.getElementById('elapsed').innerText = new Date().getTime() - startTime;
       })();
     </script>
-<?php include('../includes/footer.php'); ?>
+<?php include('includes/footer.php'); ?>

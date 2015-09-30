@@ -1,7 +1,7 @@
 <?php
   $page_title = '#9: Special Pythagorean triplet';
-  include('../includes/header.php');
-  include('../includes/solution_header.php');
+  include('includes/header.php');
+  include('includes/solution_header.php');
 ?>
 
     <p>
@@ -20,7 +20,7 @@
 
     <?php
       $correct_answer = '31875000';
-      include('../includes/solution_details.php');
+      include('includes/solution_details.php');
     ?>
 
     <script>
@@ -48,4 +48,4 @@
         document.getElementById('elapsed').innerText = new Date().getTime() - startTime;
       })();
     </script>
-<?php include('../includes/footer.php'); ?>
+<?php include('includes/footer.php'); ?>

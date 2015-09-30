@@ -1,7 +1,7 @@
 <?php
   $page_title = '#8: Largest product in a series';
-  include('../includes/header.php');
-  include('../includes/solution_header.php');
+  include('includes/header.php');
+  include('includes/solution_header.php');
 ?>
 
     <p>
@@ -18,7 +18,7 @@
 
     <?php
       $correct_answer = '23514624000';
-      include('../includes/solution_details.php');
+      include('includes/solution_details.php');
     ?>
 
     <script>
@@ -76,4 +76,4 @@
         document.getElementById('elapsed').innerText = new Date().getTime() - startTime;
       })();
     </script>
-<?php include('../includes/footer.php'); ?>
+<?php include('includes/footer.php'); ?>

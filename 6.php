@@ -1,7 +1,7 @@
 <?php
   $page_title = '#6: Sum square difference';
-  include('../includes/header.php');
-  include('../includes/solution_header.php');
+  include('includes/header.php');
+  include('includes/solution_header.php');
 ?>
 
     <p>
@@ -27,7 +27,7 @@
 
     <?php
       $correct_answer = '25164150';
-      include('../includes/solution_details.php');
+      include('includes/solution_details.php');
     ?>
 
     <script>
@@ -49,4 +49,4 @@
         document.getElementById('elapsed').innerText = new Date().getTime() - startTime;
       })();
     </script>
-<?php include('../includes/footer.php'); ?>
+<?php include('includes/footer.php'); ?>

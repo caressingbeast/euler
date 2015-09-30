@@ -21,35 +21,6 @@
         text-align: center;
       }
     </style>
-    <script>
-      function getPrimes (n) {
-        var limit = Math.sqrt(n);
-        var a = [];
-        var o = [];
-
-        // create array of integers
-        for (var i = 0; i < n; i++) {
-          a.push(true);
-        }
-
-        // false out the non-primes
-        for (var i = 2; i <= limit; i++) {
-          if (a[i]) {
-            for (var ind = i * i; ind < n; ind += i) {
-              a[ind] = false;
-            }
-          }
-        }
-
-        // remaining are primes
-        for (var i = 2; i < n; i++) {
-          if (a[i]) {
-            o.push(i);
-          }
-        }
-
-        return o;
-      }
-    </script>
+    <script src="bignumber.js"></script>
   </head>
   <body>

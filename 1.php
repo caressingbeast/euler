@@ -1,7 +1,7 @@
 <?php
   $page_title = '#1: Multiples of 3 and 5';
-  include('../includes/header.php');
-  include('../includes/solution_header.php');
+  include('includes/header.php');
+  include('includes/solution_header.php');
 ?>
 
     <p>
@@ -14,7 +14,7 @@
 
     <?php
       $correct_answer = '233168';
-      include('../includes/solution_details.php');
+      include('includes/solution_details.php');
     ?>
 
     <script>
@@ -31,7 +31,7 @@
         }
 
         document.getElementById('answer').innerText = sum;
-        document.getElementById('elapsed').innerText = new Date().getTime() - startTime;        
+        document.getElementById('elapsed').innerText = new Date().getTime() - startTime;
       })();
     </script>
-<?php include('../includes/footer.php'); ?>
+<?php include('includes/footer.php'); ?>
